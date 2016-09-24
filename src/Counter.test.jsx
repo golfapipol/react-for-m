@@ -1,28 +1,32 @@
 import React from 'react'
 import {shallow} from 'enzyme';
 import Counter from './Counter'
+import CounterStore from './CounterStore'
 
 describe('Counter', () => {
+  let counterStore, wrapper;
+  beforeEach(() => {
+    counterStore = new CounterStore();
+    wrapper = shallow(<Counter counterStore={counterStore}/>);
+    
+  })
+
   it('renders button +', () => {
-    let wrapper = shallow(<Counter />);
     let expectedButton = (<button>+</button>)
     expect(wrapper.containsMatchingElement(expectedButton)).toEqual(true);
   })
 
   it('renders numbers', () => {
-    let wrapper = shallow(<Counter />);
     let count = (<span>{0}</span>)
     expect(wrapper.containsMatchingElement(count)).toEqual(true);
   })
 
   it('renders button -', () => {
-    let wrapper = shallow(<Counter />);
     let expectedButton = (<button>-</button>)
     expect(wrapper.containsMatchingElement(expectedButton)).toEqual(true);
   })
 
   it('increase count 1 when button + clicked', () => {
-    let wrapper = shallow(<Counter />);
     let increaseButton = wrapper.find('button.increase')
 
     increaseButton.simulate('click');
@@ -32,7 +36,6 @@ describe('Counter', () => {
   })
 
   it('decrease count 1 when button - clicked', () => {
-    let wrapper = shallow(<Counter />);
     let decreaseButton = wrapper.find('button.decrease')
 
     decreaseButton.simulate('click');
