@@ -10,7 +10,7 @@ class MessageEntry extends Component {
   onSendMessage = () => {
     console.log("send!!")
     let entry = this.state.entry;
-    this.props.chatStore.messages.push(entry)
+    this.props.chatStore.addMessage(entry)
     this.setState({entry: ''})
     
   }
