@@ -20,4 +20,14 @@ describe('Counter', () => {
     let expectedButton = (<button>-</button>)
     expect(wrapper.containsMatchingElement(expectedButton)).toEqual(true);
   })
+
+  it('increase count 1 when button + clicked', () => {
+    let wrapper = shallow(<Counter />);
+    let increaseButton = wrapper.find('button.increase')
+
+    increaseButton.simulate('click');
+
+    let expectNumber = "1"
+    expect(wrapper.find('span').text()).toEqual(expectNumber);
+  })
 })
