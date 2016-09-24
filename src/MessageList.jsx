@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import Message from './Message'
+import {observer} from 'mobx-react'
+@observer
 class MessageList extends Component {
   render() {
-    console.log("this.props.messages", this.props.messages);
     return (
       <div>
         {

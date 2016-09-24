@@ -1,5 +1,5 @@
-
+import {observable} from 'mobx'
 export default class ChatStore {
-  messages = ['Hello'];
+  @observable messages = ['Hello'];
 
 }

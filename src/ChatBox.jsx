@@ -4,6 +4,7 @@ import MessageEntry from './MessageEntry';
 
 import ChatStore from './ChatStore';
 let chatStore = new ChatStore();
+
 class ChatBox extends Component {
   render() {
     return (
