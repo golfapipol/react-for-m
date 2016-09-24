@@ -9,18 +9,26 @@ class MessageEntry extends Component {
   }
   onSendMessage = () => {
     console.log("send!!")
-    this.props.chatStore.messages.push(this.state.entry)
-    // this.setState({entry: ''})
+    let entry = this.state.entry;
+    this.props.chatStore.messages.push(entry)
+    this.setState({entry: ''})
+    
   }
   onChangeEntry = (e) => {
     this.setState({entry: e.target.value});
-    console.log("this.state", this.state.entry)
   }
+
+  submitWhenEnterPress = (e) => {
+    if (e.charCode === 13) this.onSendMessage();
+  }
+  
+  isEmptyMessage = () => this.state.entry.length === 0;
+
   render() {
     return (
       <div>
-        <input type="text" onChange={this.onChangeEntry}/>
-        <button onClick={this.onSendMessage}>Send</button>
+        <input type="text" onChange={this.onChangeEntry} value={this.state.entry} onKeyPress={this.submitWhenEnterPress}/>
+        <button onClick={this.onSendMessage} disabled={this.isEmptyMessage()}>Send</button>
       </div>
     );
   }
