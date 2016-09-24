@@ -7,7 +7,9 @@ class App extends React.Component { // alternative way => class App extends Comp
   }
   
   onChangeText(e) {
-    this.state.name = e.target.value;
+    // this.state.name = e.target.value;
+    let newState = e.target.value;
+    this.setState({name: newState})
     console.log(this.state.name, "Changed")
   }
 
