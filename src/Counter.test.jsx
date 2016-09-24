@@ -30,4 +30,14 @@ describe('Counter', () => {
     let expectNumber = "1"
     expect(wrapper.find('span').text()).toEqual(expectNumber);
   })
+
+  it('decrease count 1 when button - clicked', () => {
+    let wrapper = shallow(<Counter />);
+    let decreaseButton = wrapper.find('button.decrease')
+
+    decreaseButton.simulate('click');
+
+    let expectNumber = "-1"
+    expect(wrapper.find('span').text()).toEqual(expectNumber);
+  })
 })
