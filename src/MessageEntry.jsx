@@ -4,7 +4,7 @@ class MessageEntry extends Component {
   render() {
     return (
       <div>
-        <input type="text" value={} />
+        <input type="text" />
         <button className="send">Send</button>
       </div>
     );
