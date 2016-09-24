@@ -8,13 +8,14 @@ class App extends React.Component { // alternative way => class App extends Comp
   
   onChangeText(e) {
     this.state.name = e.target.value;
+    console.log(this.state.name, "Changed")
   }
 
   render() {
     return (
       <div>
         <h1>Hello, React Component build by {this.state.name} {this.props.age + 1}</h1>
-        <input type="text" onChange={this.onChangeText} />
+        <input type="text" onChange={this.onChangeText.bind(this)} />
       </div>
     );
   }
