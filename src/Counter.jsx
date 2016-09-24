@@ -6,16 +6,23 @@ class Counter extends React.Component {
     super();
     this.state = { count: 0 };
   }
+
   increase = () => {
     let newState = this.state.count + 1;
     this.setState({count: newState})
   }
+
+  decrease = () => {
+    let newState = this.state.count - 1;
+    this.setState({count: newState})
+  }
+
   render() {
     return (
       <div>
         <button className="increase" onClick={this.increase}>+</button>
         <span>{this.state.count}</span>
-        <button className="decrease">-</button>
+        <button className="decrease" onClick={this.decrease}>-</button>
       </div>
     );
   }
