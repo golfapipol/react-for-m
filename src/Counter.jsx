@@ -5,6 +5,7 @@ class Counter extends React.Component {
     return (
       <div>
         <button>+</button>
+        <span>0</span>
         <button>-</button>
       </div>
     );
