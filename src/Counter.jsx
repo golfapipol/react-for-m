@@ -4,9 +4,9 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
-        <button>+</button>
+        <button className="increase">+</button>
         <span>0</span>
-        <button>-</button>
+        <button className="decrease">-</button>
       </div>
     );
   }
