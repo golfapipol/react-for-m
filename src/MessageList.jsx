@@ -7,10 +7,11 @@ class MessageList extends Component {
     return (
       <div>
         {
-          this.props.messages.map((message, index) => {
+          this.props.chatStore.messages.map((message, index) => {
             return <Message key={index} text={message}/>
           })
         }
+        <p>{this.props.chatStore.messageCount}</p>
       </div>
     );
   }

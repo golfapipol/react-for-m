@@ -3,13 +3,13 @@ import MessageList from './MessageList';
 import MessageEntry from './MessageEntry';
 
 import ChatStore from './ChatStore';
-let chatStore = new ChatStore();
 
 class ChatBox extends Component {
   render() {
+    let chatStore = new ChatStore();
     return (
       <div>
-        <MessageList messages={chatStore.messages} />
+        <MessageList chatStore={chatStore} />
         <MessageEntry chatStore={chatStore}/>
       </div>
     );
