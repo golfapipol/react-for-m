@@ -9,7 +9,7 @@ class ChatBox extends Component {
     return (
       <div>
         <MessageList messages={chatStore.messages} />
-        <MessageEntry />
+        <MessageEntry chatStore={chatStore}/>
       </div>
     );
   }
