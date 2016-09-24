@@ -11,7 +11,7 @@ describe('Counter', () => {
 
   it('renders numbers', () => {
     let wrapper = shallow(<Counter />);
-    let count = (<span>0</span>)
+    let count = (<span>{0}</span>)
     expect(wrapper.containsMatchingElement(count)).toEqual(true);
   })
 
