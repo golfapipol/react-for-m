@@ -6,7 +6,7 @@ class App extends React.Component { // alternative way => class App extends Comp
     this.state = {name: 'Golf'}
   }
   
-  onChangeText(e) {
+  onChangeText = (e) => {
     // this.state.name = e.target.value;
     let newState = e.target.value;
     this.setState({name: newState})
@@ -17,7 +17,7 @@ class App extends React.Component { // alternative way => class App extends Comp
     return (
       <div>
         <h1>Hello, React Component build by {this.state.name} {this.props.age + 1}</h1>
-        <input type="text" onChange={this.onChangeText.bind(this)} />
+        <input type="text" onChange={this.onChangeText} value={this.state.name} />
       </div>
     );
   }
