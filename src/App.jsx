@@ -1,5 +1,9 @@
 import React from 'react';
 import Counter from './Counter';
+import CounterStore from './CounterStore';
+
+let counterStore = new CounterStore();
+
 class App extends React.Component { // alternative way => class App extends Component {
   constructor() {
     super();
@@ -18,7 +22,7 @@ class App extends React.Component { // alternative way => class App extends Comp
       <div>
         <h1>Hello, React Component build by {this.state.name} {this.props.age + 1}</h1>
         <input type="text" onChange={this.onChangeText} value={this.state.name} />
-        <Counter />
+        <Counter counterStore={counterStore}/>
       </div>
     );
   }

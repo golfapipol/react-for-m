@@ -1,27 +1,22 @@
 import React from 'react';
+import {observer} from 'mobx-react';
 
+@observer
 class Counter extends React.Component {
 
-  constructor() {
-    super();
-    this.state = { count: 0 };
-  }
-
   increase = () => {
-    let newState = this.state.count + 1;
-    this.setState({count: newState})
+    this.props.counterStore.increase();
   }
 
   decrease = () => {
-    let newState = this.state.count - 1;
-    this.setState({count: newState})
+    this.props.counterStore.decrease();
   }
 
   render() {
     return (
       <div>
         <button className="increase" onClick={this.increase}>+</button>
-        <span>{this.state.count}</span>
+        <span>{this.props.counterStore.count}</span>
         <button className="decrease" onClick={this.decrease}>-</button>
       </div>
     );
